@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, Image } from 'react-native';
 import { Checkbox, Button } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ListaRegistros from './ListaRegistros';
 import MinhaImagem from './assets/gegeconvrtida.png'; // Substitua pelo caminho correto da imagem
+
+const Stack = createStackNavigator();
+
 
 export default function App() {
   const [mamadaChecked, setMamadaChecked] = useState(false);
@@ -44,6 +50,9 @@ export default function App() {
         onPress={() => setXixiChecked(!xixiChecked)}
       />
 
+      <Button mode="contained" onPress={handleSaveData} style={{ marginTop: 16 }}>
+        Salvar
+      </Button>
       <Button mode="contained" onPress={handleSaveData} style={{ marginTop: 16 }}>
         Salvar
       </Button>
